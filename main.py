@@ -2,7 +2,6 @@ import pygame
 import random
 import math
 
-# تنظیمات اولیه
 pygame.init()
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -11,7 +10,6 @@ pygame.display.set_caption("Fireworks Simulation")
 clock = pygame.time.Clock()
 gravity = 0.05
 
-# کلاس ذره
 class Particle:
     def __init__(self, x, y):
         self.x = x
@@ -39,7 +37,6 @@ class Particle:
             pygame.draw.circle(s, (*self.color, self.alpha), (2, 2), 2)
             surface.blit(s, (self.x, self.y))
 
-# کلاس موشک
 class Firework:
     def __init__(self):
         self.x = random.randint(100, WIDTH - 100)
@@ -72,7 +69,6 @@ class Firework:
             for p in self.particles:
                 p.draw(surface)
 
-# حلقه اصلی
 fireworks = []
 running = True
 
